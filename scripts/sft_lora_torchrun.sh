@@ -1,0 +1,24 @@
+torchrun --nproc_per_node 2 --nnodes 1 text2sql/llm_training/main_lora.py \
+--seed 42 \
+--model_name_or_path "infly/OpenCoder-1.5B-Base" \
+--llm_training_data_path "resources/datasets/retry_data/pretrain_data.jsonl" \
+--num_train_epochs 5 \
+--logging_steps 5 \
+--log_level "info" \
+--logging_strategy "steps" \
+--save_strategy "epoch" \
+--bf16 True \
+--packing True \
+--learning_rate 5e-5 \
+--lr_scheduler_type "cosine" \
+--weight_decay 1e-4 \
+--warmup_ratio 0.0 \
+--max_grad_norm 1.0 \
+--output_dir "sft-lora-torchrun" \
+--per_device_train_batch_size 8 \
+--per_device_eval_batch_size 8 \
+--gradient_accumulation_steps 4 \
+--lora_r 8 \
+--lora_alpha 16 \
+--lora_dropout 0.1 \
+--report_to "tensorboard"

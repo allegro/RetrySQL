@@ -1,0 +1,9 @@
+schema_linking_algorithm_name: LLM_BASED
+
+llm_based_algorithm_configuration:
+  llm: gemini-pro
+  use_cot: true
+  use_knowledge: true
+
+  path_to_bird_dev: resources/datasets/BIRD_dev/dev.json
+  db_root_dirpath: resources/datasets/BIRD_dev/dev_databases

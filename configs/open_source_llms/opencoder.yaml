@@ -1,0 +1,30 @@
+model_configuration:
+  model_name: infly/OpenCoder-1.5B-Base
+  weights_path: null
+  tokenizer_path: null
+
+  max_model_context_length: 4096
+  padding_strategy: LONGEST
+
+  pre_trained_model_mode: PRETRAINING  # PRETRAINING or INSTRUCTION_FINE_TUNING
+  pretraining_data_type: WITH_REASONING  # WITH_REASONING or WITHOUT_REASONING
+
+  verbose: true
+
+generation_configuration:
+  batch_size: 1
+  max_new_tokens: 1024
+
+  temperature: 0.5
+  top_k: 50
+  top_p: 1.0
+  repetition_penalty: 1.0     # 1.0 means no penalty: https://huggingface.co/docs/transformers/en/main_classes/text_generation#transformers.GenerationConfig.repetition_penalty
+
+  do_sample: True            # If False, greedy decoding is used. If True, sampling is used.
+  num_beams: 4                # If > 1, beam search is used. If 1, greedy search is used: https://huggingface.co/docs/transformers/en/main_classes/text_generation#transformers.GenerationConfig.num_beams
+
+post_processing_configuration:
+  trim_output_from_input_sequence: True
+  add_select_statement_to_the_generated_sql: False
+  normalize_generated_sql: True
+  split_output_at_question: False

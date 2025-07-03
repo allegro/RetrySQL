@@ -1,0 +1,64 @@
+[tool.poetry]
+name = "retrysql"
+version = "0.1.0"
+description = "RetrySQL: text-to-SQL training with retry data for self-correcting query generation"
+authors = [""]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+allms = "1.0.11"
+sqlglot = "^25.24.4"
+pydash = "7.0.7"
+levenshtein = "^0.26.0"
+nltk = "^3.9.1"
+marshmallow-dataclass = "8.7.0"
+fsspec = "2023.12.0"
+gcsfs = "2023.12.0"
+proto-plus = "1.24.0.dev1"
+numpy = "1.26.4"
+func-timeout = "^4.3.5"
+tqdm = "^4.66.5"
+universal-pathlib = "^0.2.5"
+torch = "2.2.0"
+faiss-cpu = "^1.9.0"
+tensorboard = "^2.18.0"
+accelerate = "^1.1.1"
+datasets = "^3.1.0"
+deepspeed = "^0.15.4"
+peft = "^0.14.0"
+trl = "^0.13.0"
+lightning = "^2.5.0.post0"
+scikit-learn = "^1.6.1"
+matplotlib = "^3.10.0"
+seaborn = "^0.13.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+black = "^24.10.0"
+isort = "^5.13.2"
+flake8 = "^7.1.1"
+pre-commit = "^4.0.1"
+pre-commit-hooks = "^5.0.0"
+#mypy = "^1.12.0"
+
+[tool.black]
+line-length = 120
+target-version = ['py310']
+
+
+[tool.flake8]
+max-line-length = 120
+extend-ignore = ["E203", "E701"]
+exclude = [".git", "__pycache__", "dist", "venv", ".venv", "ipynb_checkpoints", "resources"]
+max-complexity = 10
+
+[tool.isort]
+atomic = true
+profile = "black"
+line_length = 120
+skip_gitignore = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

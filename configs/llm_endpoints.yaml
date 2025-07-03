@@ -1,0 +1,52 @@
+gpt-4o:
+  provider: azure
+  base_url: <ENDPOINT_URL>
+  deployment: gpt-4o
+  model_name: gpt-4
+  api_version: 2023-03-15-preview
+  api_key: <CREDENTIALS>
+
+gpt-4o-mini:
+  provider: azure
+  base_url: <ENDPOINT_URL>
+  deployment: gpt-4o-mini
+  model_name: gpt-4
+  api_version: 2023-03-15-preview
+  api_key: <CREDENTIALS>
+
+
+gemini-pro:
+  provider: vertex-ai
+  cloud_project: <CLOUD_PROJECT>
+  cloud_location: <CLOUD_PROJECT_LOCATION>
+  gemini_model_name: gemini-1.5-pro-002
+  palm_model_name: null
+
+gemini-flash:
+  provider: vertex-ai
+  cloud_project: <CLOUD_PROJECT>
+  cloud_location: <CLOUD_PROJECT_LOCATION>
+  gemini_model_name: gemini-1.5-flash-002
+  palm_model_name: null
+
+text-embedding-ada-002:
+  provider: azure
+  deployment: <DEPLOYMENT_NAME>
+  model: text-embedding-ada-002
+  openai_api_base: <ENDPOINT_URL>
+  openai_api_type: azure
+  request_timeout: 240
+  max_concurrency: 1
+  max_retries: 8
+  openai_api_key: <CREDENTIALS>
+
+text-embedding-3-large:
+  provider: azure
+  deployment: <DEPLOYMENT_NAME>
+  model: text-embedding-3-large
+  openai_api_base: <ENDPOINT_URL>
+  openai_api_type: azure
+  request_timeout: 240
+  max_concurrency: 1
+  max_retries: 8
+  openai_api_key: <CREDENTIALS>

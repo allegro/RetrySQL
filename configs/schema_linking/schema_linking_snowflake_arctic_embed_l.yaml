@@ -1,0 +1,27 @@
+schema_linking_algorithm_name: NEAREST_NEIGHBOUR_SEARCH
+
+embedding_based_algorithm_configuration:
+  path_to_raw_queries: resources/datasets/embeddings-based-methods/raw_data/raw_queries.jsonl
+  path_to_raw_documents: resources/datasets/embeddings-based-methods/raw_data/raw_documents.jsonl
+
+  embedding_model_configuration:
+    model_name: SNOWFLAKE_ARCTIC_EMBED_L
+    batch_size: 64
+    embedding_size: 1024
+    max_sequence_length: 512
+    num_workers: 8
+
+  query_configuration:
+    include_external_knowledge: true
+    max_neighbour_count: 10
+
+  document_configuration:
+    include_column_description: true
+    include_column_data_format: true
+    include_column_values: true
+    include_only_values_representative: false
+
+    exclude_all_primary_and_foreign_keys: false
+    exclude_only_numerical_primary_and_foreign_keys: false
+    exclude_primary_and_foreign_keys_with_uuid_values: false
+    exclude_all_columns_with_id_in_the_name: false

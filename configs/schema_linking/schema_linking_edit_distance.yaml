@@ -1,0 +1,9 @@
+schema_linking_algorithm_name: EDIT_DISTANCE
+
+heuristic_based_algorithm_configuration:
+  ground_truth_path: resources/datasets/BIRD_dev/dev.json
+  bird_metadata_path: resources/datasets/BIRD_dev/dev_tables.json
+
+  edit_distance: 3
+  min_token_length: 3
+  use_external_knowledge: true
